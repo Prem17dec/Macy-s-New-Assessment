@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-0w-mTG">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Sht-3Z-gET"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Acronym" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75q-Z9-bkP">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-Oh-9sM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gys-UN-pDN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iOe-dj-RqS"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNk-KT-kvu">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HIS-SM-97R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-cY-meG">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bA1-ZA-hJt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oNk-KT-kvu" firstAttribute="centerY" secondItem="wh2-cY-meG" secondAttribute="centerY" id="7eI-zV-ngC"/>
+                            <constraint firstItem="eaz-0w-mTG" firstAttribute="top" secondItem="75q-Z9-bkP" secondAttribute="top" id="ENg-e2-MFY"/>
+                            <constraint firstItem="eaz-0w-mTG" firstAttribute="leading" secondItem="75q-Z9-bkP" secondAttribute="trailing" constant="10" id="O2R-Xr-kJF"/>
+                            <constraint firstAttribute="centerX" secondItem="wh2-cY-meG" secondAttribute="centerX" id="OAB-my-CG9"/>
+                            <constraint firstItem="CTw-Oh-9sM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Peq-7E-97n"/>
+                            <constraint firstItem="CTw-Oh-9sM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="Rk8-Oa-6Gl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CTw-Oh-9sM" secondAttribute="bottom" constant="129" id="S6x-3S-TGh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wh2-cY-meG" secondAttribute="trailing" constant="50" id="Vxg-VG-vm0"/>
+                            <constraint firstItem="wh2-cY-meG" firstAttribute="top" secondItem="eaz-0w-mTG" secondAttribute="bottom" constant="35" id="amg-rx-KHI"/>
+                            <constraint firstItem="wh2-cY-meG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oNk-KT-kvu" secondAttribute="trailing" id="iC3-dV-OBn"/>
+                            <constraint firstItem="eaz-0w-mTG" firstAttribute="centerY" secondItem="75q-Z9-bkP" secondAttribute="centerY" id="ihh-qN-hNM"/>
+                            <constraint firstItem="oNk-KT-kvu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="mcj-WE-Spt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eaz-0w-mTG" secondAttribute="trailing" constant="20" id="oh7-A9-i9f"/>
+                            <constraint firstItem="75q-Z9-bkP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="pyJ-n8-YwI"/>
+                            <constraint firstItem="oNk-KT-kvu" firstAttribute="top" secondItem="wh2-cY-meG" secondAttribute="top" id="rYD-Wt-vYS"/>
+                            <constraint firstItem="75q-Z9-bkP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="s2s-tg-SUW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CTw-Oh-9sM" secondAttribute="trailing" constant="25" id="uMD-Bo-QeG"/>
+                            <constraint firstItem="CTw-Oh-9sM" firstAttribute="top" secondItem="wh2-cY-meG" secondAttribute="bottom" constant="35" id="zGd-Fy-uHS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OAB-my-CG9"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="acronymTextField" destination="eaz-0w-mTG" id="tmf-KC-AUY"/>
+                        <outlet property="resultTableView" destination="CTw-Oh-9sM" id="dnJ-Mb-okd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="259"/>
+        </scene>
+    </scenes>
+</document>
